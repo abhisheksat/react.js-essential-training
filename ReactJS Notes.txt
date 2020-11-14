@@ -1,0 +1,63 @@
+ReactJS
+
+* What is ReactJS?
+- It is a JavaScript library created by Facebook
+- It follows the component-based front end development approach
+- Everything on the web page designed using ReactJS is a component
+
+* Browser based React Developer Tools for inspecting web pages as react components
+
+The following command installs create-react-app tool that gets all essentials to start building a react project
+* npm install -g create-react-app
+
+Create a new project using create-react-app
+* create-react-app hello-world
+
+Important installations in package.json
+1. React
+2. ReactDOM
+3. ReactScripts
+
+-----------------------------------------------------------------------
+React Hello World
+
+React from 'react';
+ReactDOM from 'react-dom';
+
+
+Creating a React Element
+
+//	a sample style that will be applied as attribute of the element
+var style = {
+	backgroundColor: 'red',
+	color: 'blue',
+	fontFamily: 'Arial'
+}
+
+//	defining a react element
+const hello = React.createElement(
+	'h1',	//	This is the type of element, essentially the tag
+	{id: 'hello', className: 'header', style: style},	//	these are attribute of the element
+	'React and Hello World'	//	If there are any nested elements, they go here. In this case, the innerHTML of the element
+)
+
+//	Render the created element on DOM with this function in the selected elementById
+ReactDOM.render(
+	hello,
+	document.getElementById('root')
+)
+
+
+Instead of calling the createElement each time, we can use JSX: JavaScript as XML
+for that we will remove hello element built separately and put in the HTML tags directly in render
+
+ReactDOM.render(
+	<div>
+		<h1 id="heading">Hello World</h1>
+		<p>We are glad you are here!</p>
+	</div>,
+	document.getElementById('root')
+)
+
+-----------------------------------------------------------------------
+
